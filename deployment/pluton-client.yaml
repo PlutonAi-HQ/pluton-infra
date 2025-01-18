@@ -31,28 +31,3 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: pluton-ingress
-  namespace: pluton-dev
-  annotations:
-    cert-manager.io/issuer: "letsencrypt-prod"
-spec:
-  ingressClassName: nginx
-  tls:
-    - hosts:
-        - beta.plutonai.fun
-      secretName: tls-pluton-client
-  rules:
-    - host: beta.plutonai.fun
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: pluton-client
-                port:
-                  number: 3000
