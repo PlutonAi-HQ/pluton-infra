@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pluton
+  namespace: pluton-dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pluton
+  template:
+    metadata:
+      labels:
+        app: pluton
+    spec:
+      containers:
+        - name: pluton
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-dev:v1.14
+          envFrom:
+            - secretRef:
+                name: pluton-secret
+          env:
+            - name: POSTGRES_URL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_URL
+
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 100m
+            limits:
+              memory: 256Mi
+
+      imagePullSecrets:
+        - name: ecr-creds
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pluton
+  namespace: pluton-dev
+spec:
+  type: ClusterIP
+  selector:
+    app: pluton
+  ports:
+    - protocol: TCP
+      port: 3456
+      targetPort: 3456

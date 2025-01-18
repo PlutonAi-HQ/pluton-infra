@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pluton-api
+  namespace: pluton-dev
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - api-beta.plutonai.fun
+      secretName: tls-pluton-api
+  rules:
+    - host: api-beta.plutonai.fun
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pluton
+                port:
+                  number: 3456
