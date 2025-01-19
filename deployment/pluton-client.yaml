@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pluton-client
-          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-client:2e01a39
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-client:1915a10
           ports:
             - containerPort: 3000
           resources:
