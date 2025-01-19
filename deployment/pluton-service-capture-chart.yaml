@@ -17,7 +17,7 @@ spec:
         - name: pluton-service-capture-chart
           image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-capture-chart:c328b64
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           resources:
             requests:
               cpu: 100m
@@ -35,5 +35,5 @@ spec:
     app: pluton-service-capture-chart
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 8080
+      targetPort: 8080
