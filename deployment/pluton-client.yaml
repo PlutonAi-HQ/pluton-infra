@@ -18,6 +18,12 @@ spec:
           image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-client:2e01a39
           ports:
             - containerPort: 3000
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
