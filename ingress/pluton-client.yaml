@@ -19,7 +19,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: pluton-client
+                name: pluton-landing
                 port:
                   number: 3000
 ---
@@ -30,7 +30,6 @@ metadata:
   namespace: pluton-dev
   annotations:
     cert-manager.io/issuer: "letsencrypt-prod"
-    nginx.ingress.kubernetes.io/rewrite-target: /platform
 spec:
   ingressClassName: nginx
   tls:
