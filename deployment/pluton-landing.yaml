@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pluton-landing
+  namespace: pluton-dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pluton-landing
+  template:
+    metadata:
+      labels:
+        app: pluton-landing
+    spec:
+      containers:
+        - name: pluton-landing
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-landing:c1381ed
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: pluton-landing-secret
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pluton-landing
+  namespace: pluton-dev
+spec:
+  selector:
+    app: pluton-landing
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
