@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pluton-landing
-          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-landing:c1381ed
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-landing:fe193e8
           ports:
             - containerPort: 3000
           envFrom:
