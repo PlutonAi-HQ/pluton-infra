@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pluton-service-capture-chart
-          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-capture-chart:c2a5ff7
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-capture-chart:7d0a528
           ports:
             - containerPort: 8080
           resources:
