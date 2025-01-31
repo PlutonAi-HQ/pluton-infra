@@ -4,7 +4,7 @@ metadata:
   name: pluton-service-capture-chart
   namespace: pluton-dev
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: pluton-service-capture-chart
@@ -24,9 +24,9 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 1Gi
+              memory: 2Gi
             limits:
-              memory: 1Gi
+              memory: 2Gi
 ---
 apiVersion: v1
 kind: Service
