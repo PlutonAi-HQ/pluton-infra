@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pluton-service-jupiter
-          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-jupiter:da12f18
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-jupiter:9e4f79b
           ports:
             - containerPort: 3000
           resources:
