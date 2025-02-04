@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pluton-service-gen-account
-          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-gen-account:50f6464
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-service-gen-account:e4e5650
           ports:
             - containerPort: 3000
           resources:
