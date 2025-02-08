@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pluton
-          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-dev:788e93a
+          image: 905418230863.dkr.ecr.ap-southeast-1.amazonaws.com/ai-agent/pluton-dev:861571d
           envFrom:
             - secretRef:
                 name: pluton-secret
